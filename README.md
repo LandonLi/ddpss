@@ -6,5 +6,12 @@
 
 ```bash
 ./install.sh
-./start.sh
+./start_local.sh
+```
+
+## docker运行
+
+```bash
+docker pull lavaswimmer/dandanplaysearchservice:latest
+docker run -d -p 9145:9145 --name ddpss lavaswimmer/dandanplaysearchservice
 ```
