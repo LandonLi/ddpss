@@ -5,6 +5,10 @@
 ## 本地运行
 
 ```bash
+git clone https://github.com/Lava-Swimmer/DanDanPlaySearchService.git
+cd DanDanPlaySearchService
+chmod +x ./install.sh
+chmod +x ./start_local.sh
 ./install.sh
 ./start_local.sh
 ```
