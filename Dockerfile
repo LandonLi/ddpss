@@ -1,12 +1,9 @@
 FROM ubuntu
 
-WORKDIR /app
-
-ENV PYTHONUNBUFFERED 1
-COPY api.py .
-COPY run.py .
-COPY requirements.txt .
-COPY start.sh .
+COPY api.py /app/
+COPY run.py /app/
+COPY requirements.txt /app/
+COPY start.sh /app/
 
 RUN sed -i "s/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g" /etc/apt/sources.list && \
     sed -i "s/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g" /etc/apt/sources.list && \
