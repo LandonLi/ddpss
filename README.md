@@ -1,5 +1,8 @@
 # DanDanPlaySearchService
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lava-swimmer/dandanplaysearchservice/CI)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/lavaswimmer/dandanplaysearchservice/latest)
+
 根据 [弹弹play资源搜索节点API规范](https://github.com/kaedei/dandanplay-libraryindex/blob/master/api/ResourceService.md) 开发的服务端API，支持docker。
 
 ## 直接运行
