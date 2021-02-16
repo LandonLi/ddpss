@@ -29,7 +29,7 @@ wget https://raw.githubusercontent.com/Lava-Swimmer/DanDanPlaySearchService/mast
 docker-compose up -d
 ```
 
-#### 或者docker-cli
+### 或者docker-cli
 
 ```bash
 docker pull lavaswimmer/dandanplaysearchservice:latest
