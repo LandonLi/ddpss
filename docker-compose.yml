@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+    ddpss:
+        container_name: ddpss
+        image: 'lavaswimmer/dandanplaysearchservice:latest'
+        ports:
+            - '9145:9145'
+        restart: unless-stopped

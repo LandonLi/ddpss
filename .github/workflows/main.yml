@@ -10,6 +10,7 @@ on:
     paths-ignore:
       - 'README.md'
       - 'start_local.sh'
+      - 'docker-compose.yml'
   pull_request:
     branches: [ master ]
 
