@@ -1,14 +1,12 @@
-FROM ubuntu
+FROM python:3.8-alpine
 
 COPY api.py /app/
 COPY run.py /app/
 COPY requirements.txt /app/
-COPY start.sh /app/
 
-RUN apt update && \
-    apt install -y python3-pip python3-venv && \
-    python3 -m venv ./venv && \
-    pip3 install -r /app/requirements.txt && \
-    chmod +x /app/start.sh
+RUN apk add --update --no-cache --virtual .build-deps gcc libc-dev libxslt-dev && \
+    apk add --no-cache libxslt && \
+    pip3 install --no-cache-dir -r /app/requirements.txt && \
+    apk del .build-deps
 
-CMD /bin/bash -c "/app/start.sh"
+CMD ["gunicorn", "--chdir", "/app/", "-b", "0.0.0.0:9145", "run:app"]
