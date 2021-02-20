@@ -66,7 +66,7 @@ class API:
     def __init__(self):
         self.base_uri = 'https://share.dmhy.org'
         self.apis = {
-            'types_and_subgruops': f'{self.base_uri}/topics/advanced-search?team_id=0&sort_id=0&orderby=',
+            'types_and_subgroups': f'{self.base_uri}/topics/advanced-search?team_id=0&sort_id=0&orderby=',
             'search': f'{self.base_uri}/topics/list/page/1'
         }
         self.rsession = requests.session()
@@ -88,7 +88,7 @@ class API:
 
     @Cache(expire_time=86400)
     def get_types_and_subgroups(self):
-        data = self.do_get(self.apis.get('types_and_subgruops'))
+        data = self.do_get(self.apis.get('types_and_subgroups'))
         return data
 
     @Cache()
