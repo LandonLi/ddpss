@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lava-swimmer/dandanplaysearchservice/CI)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/landonli/dandanplaysearchservice/CI)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/lavaswimmer/dandanplaysearchservice/latest)
 ![Docker Pulls](https://img.shields.io/docker/pulls/lavaswimmer/dandanplaysearchservice)
 
@@ -9,7 +9,7 @@
 ## 直接运行
 
 ```bash
-git clone https://github.com/Lava-Swimmer/DanDanPlaySearchService.git
+git clone https://github.com/LandonLi/DanDanPlaySearchService.git
 cd DanDanPlaySearchService
 chmod +x ./install.sh
 chmod +x ./start_local.sh
@@ -21,12 +21,12 @@ chmod +x ./start_local.sh
 
 ### Play with Docker
 
-[![Try in Play with Docker](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/Lava-Swimmer/DanDanPlaySearchService/master/docker-compose.yml)
+[![Try in Play with Docker](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/LandonLi/DanDanPlaySearchService/master/docker-compose.yml)
 
 ### 或者docker-compose
 
 ```bash
-wget https://raw.githubusercontent.com/Lava-Swimmer/DanDanPlaySearchService/master/docker-compose.yml
+wget https://raw.githubusercontent.com/LandonLi/DanDanPlaySearchService/master/docker-compose.yml
 docker-compose up -d
 ```
 
