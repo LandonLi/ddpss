@@ -40,3 +40,15 @@ docker run -d -p 9145:9145 --name ddpss lavaswimmer/dandanplaysearchservice
 # 使用
 
 在弹弹play的`设置->网络与更新->自定义端点->修改资源搜索节点地址`框中输入地址`http://服务器的ip:9145`
+
+# *其它
+
+在国内的网络环境中`docker build`时，可以在`Dockerfile`中`RUN`部分替换alpine镜像地址，示例如下
+
+```
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories && \
+    apk add --update --no-cache --virtual .build-deps gcc libc-dev libxslt-dev && \
+    apk add --no-cache libxslt && \
+    pip3 install --no-cache-dir -r /app/requirements.txt && \
+    apk del .build-deps
+```

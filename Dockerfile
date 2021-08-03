@@ -3,6 +3,8 @@ FROM python:3.8-alpine
 COPY api.py /app/
 COPY run.py /app/
 COPY requirements.txt /app/
+COPY templates /app/templates
+COPY static /app/static
 
 RUN apk add --update --no-cache --virtual .build-deps gcc libc-dev libxslt-dev && \
     apk add --no-cache libxslt && \
