@@ -2,12 +2,12 @@ import logging
 from datetime import datetime
 
 from bs4 import BeautifulSoup
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask import current_app
 
 from api import API
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 app.config['JSON_AS_ASCII'] = False
 app.logger.setLevel(logging.DEBUG)
 
@@ -18,7 +18,7 @@ unknown_subgroup_name = "未知字幕组"
 
 @app.route("/")
 def read_root():
-    return jsonify(Hello="Welcome to use DanDanPlaySearchService")
+    return render_template('index.html')
 
 
 @app.route("/subgroup")
