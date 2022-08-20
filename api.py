@@ -1,6 +1,6 @@
 from copy import deepcopy
 from datetime import datetime, timedelta
-from hashlib import md5
+from hashlib import md5, sha256
 from typing import Optional
 
 import requests
@@ -27,7 +27,7 @@ def cache(uuid_params_slice: str = '[1:]', expire_time: int = 600):
             copied_args.extend(kwargs_pairs)
             uuid_params = eval(f'copied_args{uuid_params_slice}')
             # 生成的uuid
-            m = md5()
+            m = sha256()
             m.update('_'.join([str(param) for param in uuid_params] or []).encode('utf-8'))
             uuid = m.hexdigest()
 

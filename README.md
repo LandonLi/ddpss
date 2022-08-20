@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/landonli/dandanplaysearchservice/badge)](https://www.codefactor.io/repository/github/landonli/dandanplaysearchservice)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/LandonLi/DanDanPlaySearchService/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/LandonLi/DanDanPlaySearchService/tree/master)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/landonli/dandanplaysearchservice/CI)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/lavaswimmer/dandanplaysearchservice/latest)
 ![Docker Pulls](https://img.shields.io/docker/pulls/lavaswimmer/dandanplaysearchservice)

@@ -11,6 +11,7 @@ on:
       - 'README.md'
       - 'start_local.sh'
       - 'docker-compose.yml'
+      - '.circleci'
   pull_request:
     branches: [ master ]
 
