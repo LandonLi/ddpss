@@ -1,5 +1,5 @@
 beautifulsoup4==4.9.3
-certifi==2020.12.5
+certifi==2022.6.15
 chardet==5.0.0
 click==7.1.2
 Flask==1.1.2
