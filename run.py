@@ -14,6 +14,7 @@ app.logger.setLevel(logging.DEBUG)
 dmhyAPI = API()
 unknown_subgroup_id = -1
 unknown_subgroup_name = "未知字幕组"
+parser_html = 'html.parser'
 
 
 @app.route("/")
@@ -24,7 +25,7 @@ def read_root():
 @app.route("/subgroup")
 def subgroup():
     _, data = dmhyAPI.get_types_and_subgroups()
-    soup = BeautifulSoup(data, 'html.parser')
+    soup = BeautifulSoup(data, parser_html)
     options = soup.find(id='AdvSearchTeam')
     subgroups = [{'Id': int(option.get('value')), 'Name': option.text} for option in options.contents]
     subgroups.append({'Id': unknown_subgroup_id, 'Name': unknown_subgroup_name})
@@ -34,7 +35,7 @@ def subgroup():
 @app.route("/type")
 def type():
     _, data = dmhyAPI.get_types_and_subgroups()
-    soup = BeautifulSoup(data, 'html.parser')
+    soup = BeautifulSoup(data, parser_html)
     options = soup.find(id='AdvSearchSort')
     types = [{'Id': int(option.get('value')), 'Name': option.text} for option in options.contents]
     return jsonify(Types=types)
@@ -45,7 +46,6 @@ def list():
     keyword = request.args.get('keyword')
     sort_id = request.args.get('sort_id')
     team_id = request.args.get('team_id')
-    r = request.args.get('r')
     sort_id = int(sort_id) if sort_id else 0
     team_id = int(team_id) if team_id else 0
     _, data = dmhyAPI.search(keyword=keyword, sort_id=sort_id, team_id=team_id)
@@ -53,7 +53,7 @@ def list():
     has_more = False
     resources = []
     try:
-        soup = BeautifulSoup(data, 'html.parser')
+        soup = BeautifulSoup(data, parser_html)
         trs = soup.find(id='topic_list').find_all('tr')[1:]
         has_more = True if any(['下一頁' in getattr(div.find('a'), 'text', '') for div in
                                 soup.find_all('div', class_='nav_title')]) else False
@@ -85,5 +85,4 @@ def list():
     except Exception as e:
         current_app.logger.error(e)
         current_app.logger.error("无法解析结果")
-    finally:
-        return jsonify(HasMore=has_more, Resources=resources)
+    return jsonify(HasMore=has_more, Resources=resources)

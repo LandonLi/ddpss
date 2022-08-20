@@ -9,7 +9,7 @@ from flask import current_app
 cached_datas = dict()
 
 
-def Cache(uuid_params_slice: str = '[1:]', expire_time: int = 600):
+def cache(uuid_params_slice: str = '[1:]', expire_time: int = 600):
     """
     装饰器，缓存
     :param uuid_params_slice: 用于生成uuid的func的参数列表切片
@@ -86,12 +86,12 @@ class API:
         else:
             raise RuntimeError(f'response status code: {response.status_code}')
 
-    @Cache(expire_time=86400)
+    @cache(expire_time=86400)
     def get_types_and_subgroups(self):
         data = self.do_get(self.apis.get('types_and_subgroups'))
         return data
 
-    @Cache()
+    @cache()
     def search(self, keyword: str, sort_id: Optional[int] = 0, team_id: Optional[int] = 0, r: Optional[str] = None):
         payload = {
             'order': 'date-desc',
