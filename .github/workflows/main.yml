@@ -12,6 +12,7 @@ on:
       - 'start_local.sh'
       - 'docker-compose.yml'
       - '.circleci'
+      - '.github/workflows/main.yml'
   pull_request:
     branches: [ master ]
 
@@ -22,7 +23,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # skip 
+    # skip
     if: ${{ github.actor != 'dependabot[bot]' }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
