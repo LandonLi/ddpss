@@ -8,6 +8,7 @@ on:
   push:
     branches: [ master ]
     paths-ignore:
+      - 'LICENSE'
       - 'README.md'
       - 'start_local.sh'
       - 'docker-compose.yml'
