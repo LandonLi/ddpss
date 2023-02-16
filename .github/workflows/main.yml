@@ -10,10 +10,9 @@ on:
     paths-ignore:
       - 'LICENSE'
       - 'README.md'
-      - 'start_local.sh'
       - 'docker-compose.yml'
       - '.circleci'
-      - '.github/workflows/main.yml'
+      - '.github'
   pull_request:
     branches: [ master ]
 
