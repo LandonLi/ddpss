@@ -11,8 +11,8 @@ on:
       - 'LICENSE'
       - 'README.md'
       - 'docker-compose.yml'
-      - '.circleci'
-      - '.github'
+      - '.circleci/**'
+      - '.github/**'
   pull_request:
     branches: [ master ]
 
