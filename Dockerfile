@@ -1,4 +1,4 @@
-FROM python:3.11-alpine
+FROM python:alpine
 
 COPY api.py /app/
 COPY run.py /app/

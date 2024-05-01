@@ -1,8 +1,7 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/landonli/dandanplaysearchservice/badge)](https://www.codefactor.io/repository/github/landonli/dandanplaysearchservice)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/LandonLi/DanDanPlaySearchService/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/LandonLi/DanDanPlaySearchService/tree/master)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/landonli/dandanplaysearchservice/main.yml?branch=master)
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/lavaswimmer/dandanplaysearchservice/latest)
-![Docker Pulls](https://img.shields.io/docker/pulls/lavaswimmer/dandanplaysearchservice)
+[![CodeFactor](https://www.codefactor.io/repository/github/landonli/ddpss/badge)](https://www.codefactor.io/repository/github/landonli/ddpss)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/landonli/ddpss/main.yml?branch=master)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/1andonli/ddpss/latest)
+![Docker Pulls](https://img.shields.io/docker/pulls/1andonli/ddpss)
 
 根据 [弹弹play资源搜索节点API规范](https://github.com/kaedei/dandanplay-libraryindex/blob/master/api/ResourceService.md) 开发的服务端API，支持docker。
 
@@ -11,8 +10,8 @@
 ## 直接运行
 
 ```bash
-git clone https://github.com/LandonLi/DanDanPlaySearchService.git
-cd DanDanPlaySearchService
+git clone https://github.com/LandonLi/ddpss.git
+cd ddpss
 chmod +x ./install.sh
 chmod +x ./start_local.sh
 ./install.sh
@@ -21,22 +20,18 @@ chmod +x ./start_local.sh
 
 ## 使用docker
 
-### Play with Docker
-
-[![Try in Play with Docker](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/LandonLi/DanDanPlaySearchService/master/docker-compose.yml)
-
-### 或者docker-compose
+### docker-compose
 
 ```bash
-wget https://raw.githubusercontent.com/LandonLi/DanDanPlaySearchService/master/docker-compose.yml
+wget https://raw.githubusercontent.com/LandonLi/ddpss/master/docker-compose.yml
 docker-compose up -d
 ```
 
-### 或者docker-cli
+### docker-cli
 
 ```bash
-docker pull lavaswimmer/dandanplaysearchservice:latest
-docker run -d -p 9145:9145 --name ddpss lavaswimmer/dandanplaysearchservice
+docker pull 1andonli/ddpss:latest
+docker run -d -p 9145:9145 --name ddpss 1andonli/ddpss:latest
 ```
 
 # 使用
