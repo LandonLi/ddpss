@@ -52,4 +52,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: lavaswimmer/dandanplaysearchservice:latest
+          tags: 1andonli/ddpss:latest
