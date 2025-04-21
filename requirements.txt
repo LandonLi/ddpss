@@ -1,4 +1,4 @@
-beautifulsoup4==4.13.3
+beautifulsoup4==4.13.4
 certifi==2024.12.14
 chardet==5.2.0
 click==8.1.8
